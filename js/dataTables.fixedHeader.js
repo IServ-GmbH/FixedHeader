@@ -560,15 +560,11 @@ $.extend( FixedHeader.prototype, {
 
 		// It isn't trivial to add a !important css attribute...
 		var importantWidth = function (w) {
-			itemDom.floating.attr('style', function(i,s) {
-				return (s || '') + 'width: '+w+'px !important;';
-			});
+			itemDom.floating.css('width', w + 'px');
 
 			// If not scrolling also have to update the floatingParent
 			if (!scrollEnabled) {
-				itemDom.floatingParent.attr('style', function(i,s) {
-					return (s || '') + 'width: '+w+'px !important;';
-				});
+				itemDom.floatingParent.css('width', w + 'px');
 			}
 		};
 
